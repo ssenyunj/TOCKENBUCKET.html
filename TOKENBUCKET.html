@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>THE CHARACTERISTICS OF THE TOCKET BUCKET MECHANINSM AND BASING ON THE QOS USING HTML AS A LANGUAGE OF DESIGNING</title>
+        <--This section will look at the controls that we shall use in the headings and paragraphs-->
+        <style>
+            body {
+                background-color:blue ;
+            }
+            h1 {
+                color:red ;
+            }
+            h2 {
+                color:red ;
+            }
+            h3 {
+                color:red ; 
+            }
+            h4 {
+                color:red ;
+            }
+            h5 {
+                color: red;
+            }
+            h6 {
+                color: red;
+            }
+            p {
+                color: yellow;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <--Here we shall talk about the characteristics of the token bucket relating to QOS-->
+        <h1 style="font-size: 70px;">The token bucket in telecommunication</h1>
+        <p>The bucket holds tokens instead of packet.</p>
+        <p>Tokens are generated and placed into the token bucket at a constant rate.</p>
+        <p>When a packet arrives at the token bucket, it is transmitted if there is a token available.  Otherwise it is buffered until a token becomes available.</p>
+        <p>The token bucket has a fixed size, so when it becomes full, subsequently generated tokens are discarded.</p>
+        <img src="C:\Users\user\Desktop\html\images\IMG3.png" alt="alternate text" width="500px" height="300px">
+        <p>A token bucket provides a mechanism that allows a desired level of burstiness within a flow by limiting its average rate as well as its maximum burst size.</p>
+        <h2 style="font-size: 60px;">More about a token bucket</h2>
+        <img src="C:\Users\user\Desktop\html\images\IMG2.png" alt="alternate text" height="300px" width="400px">
+        <p>A token bucket can be viewed as an abstraction of the rate of transfer expressed as a relationship between a committed burst size CBS, a committed information rate CIR, and a time interval T.</p>
+        <p>CIR=CBS/T</p>
+        <p>Where CIR is the;</p>
+        <p>Committed information rate (CIR) specifies the amount of data that can be sent per unit time interval and represents the long-term average rate at which a flow can send its data into the network.</p>
+        <p>Where CBS is the;</p>
+        <p>Committed burst size (CBS) specifies the maximum number of bytes that can be transmitted into the network in an extremely short interval of time.</p>
+        <p>Where T is the;</p>
+        <p>Time interval (T) specifies the time per burst.</p>
+        <h3 style="font-size: 50px;">Specifying a token bucket using an example.</h3>
+        <img src="C:\Users\user\Desktop\html\images\IMG6.jpg" alt="alternate text" height="300px" width="600px">
+        <p>Assume that the traffic needs to be sent into the network at a mean rate CIR of 2.4 Mbps. If a burst for a duration of 10 millisec (= 0.01 sec) needs to be sustained, CBS can be calculated using the token bucket definition as</p>
+        <p>CIR = (2400000 bits/sec x 0.01undefinedsec)/(8undefinedbits/byte) </p>
+        <p>which yields 3000 bytes. Thus, the token rate is 300,000 (= 2,400,000/8) bytes per sec, the committed burst size is 3000 bytes, and the token interval (T) is 10 millisec.</p>
+        <p>Therefore, the token generator credits the token bucket with 3000 bytes worth of tokens every 10 millisec.</p>
+        <p>This indicates that the conforming traffic will, in the worst case, come in 100 bursts per sec of 3000 bytes each and at a committed information rate not exceeding 2.4 Mbps.</p>
+        <h4 style="font-size: 40px;">More explanation on the Token Bucket</h4>
+        <p>The algorithm assigns a token bucket for each flow that consists of a bucket that can hold up to CBS tokens. Each token can be considered as permission for the source to transmit a certain number of bits into the network. </p>
+        <p> These CBS tokens in the bucket represent the allowed burst size. New tokens are added to the bucket at the rate of CIR tokens per token interval.</p>
+        <p>If the bucket contains less than CBS tokens when a new token is generated, it is added to the bucket; otherwise, the newly generated token is dropped and the token bucket remains filled with CBS tokens.</p>
+        <p>The token Bucket is further illustrated by image below.</p>
+        <img src="C:\Users\user\Desktop\html\images\IMG.jpg" alt="alternate text" style="height: 300px; width: 600px;">
+        <h5 style="font-size: 30px;">How the token bucket works on receiving the data packet.</h5>
+        <p>Now, continuing with the algorithm, the packets arriving in a flow are placed into a packet queue that has a maximum length of L. If the flow delivers more packets than the queue can store, the excess packets are discarded. </p>
+        <p>When a packet arrives in a flow, one of the following cases will apply.</p>
+        <p>If the token bucket is full, the tokens are removed before the packet is transmitted into the network.</p>
+        <p>If the token bucket is empty, the packet is queued until the tokens are accumulated in the bucket.</p>
+        <p>Eventually, when the bucket contains tokens, that many tokens are removed from the bucket and the packets are transmitted into the network.</p>
+        <p>If packets arrive in short bursts, up to CBS tokens would be available in the bucket, and thus, up to CBS bytes would still get through. As a consequence, the maximum burst size is limited to at most CBS bytes for the flow. </p>
+        <img src="C:\Users\user\Desktop\html\images\IMG8.jpg" alt="alternate text" height="300px" width="500px">
+        <h6 style="font-size: 20px;">The token bucket in relation to the Quality of service.</h6>
+        <p>The token bucket is a great concept on how data movement is controlled on the network for promotion of quality of service given to a network.</p>
+    </body>
+</html>
